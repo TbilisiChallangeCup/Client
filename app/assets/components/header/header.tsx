@@ -13,7 +13,7 @@ export default function Header() {
       <div className={style.wrapper} >
         <article>
           <div>
-            <Image src={icon} alt='Trophy Icon Tcc Tbilisi Challange Cup Football Soccer' />
+            <Image src={icon.src} width={icon.width} height={icon.height} alt='Trophy Icon Tcc Tbilisi Challange Cup Football Soccer' />
           </div>
           
           <section>

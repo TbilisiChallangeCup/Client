@@ -1,0 +1,23 @@
+.calendar{
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+.calendar .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.475);
+    padding-bottom: 20px;
+}
+.calendar .title p:first-child{
+    font-size: 22px;
+    font-weight: bold;
+}
+.calendar .title p:last-child{
+    background: var(--highLightedText);
+    padding: 10px;   
+}
+.calendar .contents li{
+    background-color: red;
+    margin-top: 20px;
+}

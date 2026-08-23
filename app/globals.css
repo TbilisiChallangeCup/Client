@@ -5,20 +5,48 @@
     text-decoration: none;
 }
 :root{
+    /* Background Color */
     --navigationBg: rgba(6, 12, 20, 0.644);
+
+    /* Backgrounds */
+    --highLightedText: linear-gradient(135deg, rgba(43,124,255,.22), rgba(229,76,68,.18));
     --gradientBg: radial-gradient(circle at 10% 0%, rgba(43,124,255,.16), transparent 25%), radial-gradient(circle at 100% 0%, rgba(229,76,68,.10), transparent 20%), radial-gradient(circle at 90% 25%, rgba(240,181,58,.08), transparent 18%), linear-gradient(180deg, #050b13 0%, #07111d 38%, #091424 100%);
-    --sectionBg: --gradientBg: radial-gradient(circle at 10% 0%, #2b7cff29, transparent 25%), radial-gradient(circle at 100% 0%, #e54c441a, transparent 20%), radial-gradient(circle at 90% 25%, #f0b53a14, transparent 18%), linear-gradient(180deg, #050b13 0%, #07111d 38%, #091424 100%);
+    --sectionBg:  radial-gradient(circle at 10% 0%, #2b7cff29, transparent 25%), radial-gradient(circle at 100% 0%, #e54c441a, transparent 20%), radial-gradient(circle at 90% 25%, #f0b53a14, transparent 18%), linear-gradient(180deg, #050b13 0%, #07111d 38%, #091424 100%);
+    --contentsBg: radial-gradient(circle at right top, rgba(240,181,58,.12), transparent 22%), radial-gradient(circle at left bottom, rgba(43,124,255,.10), transparent 26%), linear-gradient(180deg, rgba(17,31,50,.95), rgba(10,22,36,.95));
+
+    /* shadows */
+    --softShadow: 0 14px 34px rgba(0,0,0,.22);
+
+    /* borders */
+    --highLight: 1px solid rgba(255,255,255,.07);
 }
+
+/* pre styles */
+.default{
+    padding: 20px;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 20px;
+    background: var(--contentsBg);
+    border: var(--highLight);
+    box-shadow: var(--softShadow);
+}
+
 body{
     background: var(--gradientBg);
     background-attachment: fixed;
-    height: 100vh;
 
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
+main{
+    padding: 0 3vw;
+}
 .pageContainer{
-    margin-top: 80px;
+    margin-top: 120px;
+    height: 100%;
+    overflow-y: scroll;
 }
 @font-face {
     font-family: bigShoulders;

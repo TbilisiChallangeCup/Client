@@ -1,11 +1,11 @@
 // import React from 'react'
-import style from '../description/style.module.css'
+// import style from '../description/style.module.css'
 
 const AboutNav = ({title="", text=""}) => {
   return (
-    <section className={style.aboutNavigation} >
-      <p>{title}</p>
-      <p>{text}</p>
+    <section className={`default`} >
+      <p style={{fontWeight: 'bolder', fontSize: '20px'}} >{title}</p>
+      <p style={{fontWeight: 'bolder', fontSize: '20px', marginTop: '20px'}} >{text}</p>
     </section>
   )
 }

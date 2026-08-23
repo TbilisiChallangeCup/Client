@@ -5,7 +5,6 @@
 }
 .nav ul{
   display: flex;
-  gap: 30px;
 }
 .nav ul li{
   display: flex;
@@ -14,26 +13,33 @@
 .nav ul a{
   display: block;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 5px;
   font-family: sans-serif;
   color: white;
   font-size: 13px;
   font-weight: bold;
   opacity: 0.9;
+  padding: 10px 20px;
+  background: none;
+}
+.nav ul a:hover{
+  background: var(--highLightedText);
 }
 .mobileBtn{
   display: none;
-
-  padding: 10px;  
-  background: transparent;
-  border: none;
-  color: white;
+  padding: 8;
+  padding-bottom: 4px;
+  border-radius: 5px;
 }
 .mobileBtn svg{
   height: 25px;
   width: 25px;
 }
-
+@media (min-width: 969px){
+  .nav{
+    display: block !important;
+  }
+}
 @media (max-width: 969px) {
   .mobileBtn{
     display: block;
@@ -43,9 +49,15 @@
     position: fixed;
     top: 100px;
     right: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.263);
-    background: var(--navigationBg);
+    left: 20px;
+
+    padding: 20px;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 20px;
+    background: var(--contentsBg);
+    border: var(--highLight);
+    box-shadow: var(--softShadow);
   }
   .nav ul{
     display: flex;
@@ -57,7 +69,7 @@
     justify-content: center;
   }
   .nav ul li a{
-    padding: 15px 25px;
-    text-align: right;
+    text-align: center;
+    width: 100%;
   }
 }

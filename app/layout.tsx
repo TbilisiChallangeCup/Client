@@ -33,13 +33,14 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"></link>
+        <title>TCC</title>
       </head>
       <body className="min-h-full flex flex-col">
         <Header/>
         <div className="pageContainer" >     
           {children}
-          <Footer/>
         </div>
+        <Footer/>
         <Cursor/>
       </body>
     </html>

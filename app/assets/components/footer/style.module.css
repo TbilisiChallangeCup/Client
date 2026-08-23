@@ -1,6 +1,7 @@
 .footer{
     background: var(--navigationBg);
     width: 100%;
+    margin-top: 50px;
 }
 .footer section{
     display: flex;

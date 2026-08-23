@@ -1,0 +1,10 @@
+.contacts{
+    margin-top: 30px;
+}
+.contacts p{
+    padding: 20px 0;
+    border-bottom: 0.5px solid rgba(193, 202, 242, 0.225)
+}
+.contacts p:last-child{
+    border: none;
+}
