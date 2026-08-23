@@ -26,7 +26,7 @@ const Navigation = () => {
                         {
                             navigation.map((nav, i) => (
                                 <li key={i} >
-                                    <Link href={`/page/${nav.href}`} onClick={ ()=> setState(!state) } >
+                                    <Link href={nav.href} onClick={ ()=> setState(!state) } >
                                         {nav.label}
                                     </Link>
                                 </li>
