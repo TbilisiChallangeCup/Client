@@ -31,13 +31,15 @@ const Page = () => {
               <ul>
                 <li>
                   <Button inlineCss={{background: 'linear-gradient(135deg,#ff8c2a,#ff3d3d)'}} 
-                          href={"page/main"} 
-                          text={"ცხრილების ნახვა"} />
+                          href={"/page/table"} 
+                          text={"ცხრილების ნახვა"}
+                          className='' />
                 </li>
                 <li>
                   <Button inlineCss={{backgroundColor: 'rgba(255, 255, 255, 0.151)'}} 
-                          href={"page/main"} 
-                          text={"მატჩების კალენდარი"} />
+                          href={"/page/calendar"} 
+                          text={"მატჩების კალენდარი"}
+                          className='' />
                 </li>
               </ul>
             </nav>

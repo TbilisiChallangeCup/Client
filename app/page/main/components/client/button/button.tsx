@@ -5,8 +5,8 @@ import style from './style.module.css'
 import { CSSProperties } from 'react'
 
 interface ComponentProperties{
-  text: "",
-  href: "",
+  text: string,
+  href: string,
   className: string,
   inlineCss: CSSProperties,
 }
