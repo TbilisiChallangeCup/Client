@@ -21,7 +21,7 @@ const Navigation = () => {
                 </svg>
             </button>
             {
-                <nav className={`${style.nav}`}  style={{display: state ? 'none' : 'block'}} >
+                <nav className={`${style.nav}`}  style={{display: state ? 'block' : 'none'}} >
                     <ul>
                         {
                             navigation.map((nav, i) => (

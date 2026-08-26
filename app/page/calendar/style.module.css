@@ -1,23 +1,54 @@
 .calendar{
     margin-top: 30px;
     overflow-y: scroll;
+    padding: 0; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .calendar .title{
+    background-color: var(--navigationBg);
+}
+.calendar .title p{
+    background: var(--highLightedText);
+    border-radius: 200px;
+}
+.calendar .title .yearDropdown li p{
+    border-radius: 0;
+}
+.calendar .title,
+.calendar .contents li{
     display: flex;
     justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.416);
+}
+.calendar .title .dropdown .contents{
+    padding: 0;
+}
+.calendar .title div,
+.calendar .contents li div{
+    display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.475);
-    padding-bottom: 20px;
+    text-align: center;
+    gap: 30px;
+    font-size: 20px;
+    font-family: sans-serif;
 }
-.calendar .title p:first-child{
-    font-size: 22px;
-    font-weight: bold;
-}
-.calendar .title p:last-child{
-    background: var(--highLightedText);
-    padding: 10px;   
+.calendar .date .yearDropdown{
+    border: 1px solid rgba(255, 255, 255, 0.416);
+    border-radius: 3px;
 }
 .calendar .contents li{
-    background-color: red;
-    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 0;
+    display: flex;
+}
+.calendar .title div div{
+    gap: 5px !important;
+}
+.calendar .contents div p,
+.calendar .title p,
+.calendar .title div div{
+    width: 110px;
+    padding: 5px 0;
 }

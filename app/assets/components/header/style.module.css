@@ -22,6 +22,13 @@
   gap: 15px;
   color: white;
 }
+.header article div{
+  background: url(../../img/icon.jpg);
+  background-size: 120%;
+  background-position: center;
+  /* background-position-x: 0; */
+  background-repeat: no-repeat;
+}
 .header article section p{
   font-size: 30px;
   font-family: sans-serif;

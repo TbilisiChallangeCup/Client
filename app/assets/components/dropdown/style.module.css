@@ -1,0 +1,22 @@
+.dropdown{
+    position: relative;
+}
+.dropdown .selectedYear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.dropdown ul{
+    position: absolute;
+    top: 1;
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    padding: 0;
+}
+.dropdown ul li p{
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(196, 44, 33, 0.405);
+}
