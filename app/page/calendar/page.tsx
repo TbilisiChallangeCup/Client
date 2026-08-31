@@ -1,46 +1,16 @@
 import Dropdown from '@/app/assets/components/dropdown/dropdown'
 import style from './style.module.css'
 
-const Table = () => {
-  const calendar = [
-    {
-      tour: 1,
-      year: 2012,
-      team: "team",
-      result: 10,
-      teamIcon: "teamIcon"
-    },
-    {
-      tour: 1,
-      year: 2012,
-      team: "team",
-      result: 10,
-      teamIcon: "teamIcon"
-    },
-    {
-      tour: 1,
-      year: 2012,
-      team: "team",
-      result: 10,
-      teamIcon: "teamIcon"
-    },
-    {
-      tour: 1,
-      year: 2012,
-      team: "team",
-      result: 10,
-      teamIcon: "teamIcon"
-    },
-    {
-      tour: 1,
-      year: 2012,
-      team: "team",
-      result: 10,
-      teamIcon: "teamIcon"
-    },
-  ]
-  const years = ['2026','2025','2024','2023','2022','2021','2020','2019']
+interface YearData {
+  [year: number]:
+  {
+      tour: number,
+      team1Points: number,
+      team2Points: number,
+  }[]
+}
 
+const Table = () => {
   return (
     <>
       <main className={style.main} >
@@ -52,7 +22,7 @@ const Table = () => {
           <section className={style.title}>
             <div className={style.date} >
               <p>ტური</p>
-              <Dropdown className={style.dropdown} contents={years} indexing={false}  />
+              {/* <Dropdown className={style.dropdown} contents={years} indexing={false} /> */}
             </div>
             <div>
               <p>გუნდი</p>
@@ -61,12 +31,12 @@ const Table = () => {
             </div>
 
           </section>
-          <ul className={style.contents} >
+          {/* <ul className={style.contents} >
             {
               calendar.map((data, i) => (
                 <li>
                   <div>
-                    <p>{data.tour}</p>
+                    <p>{data}</p>
                     <p className={style.contentsYear}>{data.year}</p>
                   </div>
 
@@ -78,7 +48,7 @@ const Table = () => {
                 </li>
               ))
             }
-          </ul>
+          </ul> */}
         </div>
       </main>
     </>

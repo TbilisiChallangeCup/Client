@@ -15,8 +15,11 @@
     overflow-y: scroll;
     border-radius: 5px;
     padding: 0;
+    width: 100%;
+    text-align: center;
 }
 .dropdown ul li p{
     border-radius: 0 !important;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(196, 44, 33, 0.405);
 }

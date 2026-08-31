@@ -19,12 +19,10 @@
     text-align: center;
 }
 
-.statistics .Dropdown{
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+.statistics .calendarDropdown{
+    padding: 10px 0;
+    background-color: var(--navigationBg);
+    border-radius: 20px;
 }
 
 /* header stays a normal table row group */

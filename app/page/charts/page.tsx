@@ -1,3 +1,4 @@
+import Dropdown from '@/app/assets/components/dropdown/dropdown';
 import style from './style.module.css'
 
 const Table = () => {
@@ -10,6 +11,7 @@ const Table = () => {
     ]);
   }
 
+  const years = ['2026','2025','2024','2023','2022','2021','2020','2019']
   return (
     <>
       <main>
@@ -18,13 +20,7 @@ const Table = () => {
           <p>ტურნირის მიმდინარე მდგომარეობა ასაკობრივი კატეგორიების მიხედვით.</p>
         </section>
         <div className={`${style.statistics} default`}>
-          <div className={style.Dropdown}>
-            <p>კატეგორია</p>
-            <section className={`${style.contents} default`}>
-
-            </section>
-          </div>
-
+          <Dropdown className={style.calendarDropdown} contents={years} indexing={false} />
           <table>
             <thead>
               <tr>
