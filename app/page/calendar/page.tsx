@@ -4,13 +4,13 @@ import style from './style.module.css'
 interface YearData {
   [year: number]:
   {
-      tour: number,
-      team1Points: number,
-      team2Points: number,
+    tour: number,   
+    team1Points: number,
+    team2Points: number,
   }[]
 }
 
-const Table = () => {
+const Calendar = () => {
   return (
     <>
       <main className={style.main} >
@@ -22,37 +22,18 @@ const Table = () => {
           <section className={style.title}>
             <div className={style.date} >
               <p>ტური</p>
-              {/* <Dropdown className={style.dropdown} contents={years} indexing={false} /> */}
+              <Dropdown className={style.dropdown} contents={['2012']} currentSelection={} />
             </div>
             <div>
               <p>გუნდი</p>
               <p>შედეგი</p>
               <p>გუნდი</p>
             </div>
-
           </section>
-          {/* <ul className={style.contents} >
-            {
-              calendar.map((data, i) => (
-                <li>
-                  <div>
-                    <p>{data}</p>
-                    <p className={style.contentsYear}>{data.year}</p>
-                  </div>
-
-                  <div>
-                    <p>{`${data.team, i}`}</p>
-                    <p>{data.result}</p>
-                    <p>{data.teamIcon}</p>
-                  </div>
-                </li>
-              ))
-            }
-          </ul> */}
         </div>
       </main>
     </>
   )
 }
 
-export default Table
+export default Calendar

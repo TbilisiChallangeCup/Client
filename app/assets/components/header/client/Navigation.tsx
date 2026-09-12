@@ -8,7 +8,7 @@ const Navigation = () => {
 
     const navigation = [
         { href: 'main', label: 'მთავარი' },
-        { href: 'table', label: 'ცხრილი' },
+        { href: 'charts', label: 'ცხრილი' },
         { href: 'calendar', label: 'კალენდარი' },
         { href: 'news', label: 'სიახლეები' },
         { href: 'contact', label: 'კონტაქტი' },
