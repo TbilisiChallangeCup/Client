@@ -55,3 +55,10 @@
     padding: 20px 0;
     text-align: center;
 }
+.statistics table tr img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    overflow: hidden;
+    font-size: 0;
+}

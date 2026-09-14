@@ -46,6 +46,8 @@ const Charts = () => {
 
         setYears(years)
         setData(data)
+
+        setSelected(years)
       }
 
       catch (err) {
@@ -75,7 +77,7 @@ const Charts = () => {
               {data[selected]?.map((team) => (
                 <tr key={team.index}>
                   <td>{team.index}</td>
-                  <td>{team.team}</td>
+                  <td><img src={team.team} alt="icon football soccer icon team tbilisi challange cup tcc" /></td>
                   <td>{team.played}</td>
                   <td>{team.wins}</td>
                   <td>{team.draws}</td>
