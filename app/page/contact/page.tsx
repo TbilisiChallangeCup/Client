@@ -1,12 +1,39 @@
+'use client'
+import { useState, useEffect } from 'react'
 import style from './style.module.css'
 
+type Contact = {
+  email: string,
+  phone: string,
+  location: string,
+  workHours: string
+}
+
 const Table = () => {
-  const contact = [{
-    email: 'ელპოსტა - info@tbilisichallengecup.ge',
-    phone: 'ტელეფონის ნომერი - +995 5XX XX XX XX',
-    location: 'ლოკაცია - თბილისი, საქართველო',
-    workHours: 'სამუშაო საათები - ორშაბათი - პარასკევი / 10:00 - 18:00'
-  }]
+  const [data, setData] = useState<Contact>()
+  async function FetchData() {
+    try {
+      const res = await fetch('https://raw.githubusercontent.com/TbilisiChallangeCup/database/main/Contact.json')
+      const json = JSON.parse(await res.text());
+
+      return json
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const data: Contact = await FetchData();
+        setData(data)
+      }
+      catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
 
   return (
     <>
@@ -16,15 +43,12 @@ const Table = () => {
           <p>ტურნირთან დაკავშირებული ინფორმაციისა და მონაწილეობის საკითხებისთვის.</p>
         </section>
         <div className={`${style.contacts} default`} >
-          {
-            contact.map((data, i) => (
-              <section key={i}>
-                {Object.entries(data).map(([key, value]) => (
-                  <p key={key}>{value}</p>
-                ))}
-              </section>
-            ))
-          }
+          <section>
+            <p>ტელეფონი - {data?.phone}</p>
+            <p>ელფოსტა - {data?.email}</p>
+            <p>ლოკაცია - {data?.location}</p>
+            <p>სამუშაო საათები - {data?.workHours}</p>
+          </section>
         </div>
       </main>
     </>

@@ -1,17 +1,59 @@
+'use client'
 import Dropdown from '@/app/assets/components/dropdown/dropdown';
 import style from './style.module.css'
+import { useEffect, useState } from 'react';
 
-const Table = () => {
+type Team = {
+  "index": number,
+  "team": string,
+  "played": number,
+  "wins": number,
+  "draws": number,
+  "losses": number,
+  "goalsScored": number,
+  "goalsAgainst": number,
+  "goalDifference": number,
+  "points": number
+}
+type structure = {
+  [year: string]: [Team]
+}
+
+const Charts = () => {
+  const [years, setYears] = useState<string[]>([])
+  const [data, setData] = useState<structure>({})
+  const [selected, setSelected] = useState<any>(0)
+
   const headers = ["#", "გუნდი", "თ", "მ", "ფ", "წ", "გ", "გშ", "სხ", "ქ"];
-  const teamPlaceholders = [];
 
-  for (let i = 0; i < 10; i++) {
-    teamPlaceholders.push([
-      `${i}`, `team ${i}`, `${i}`, `${i}`, `${i}`, `${i}`, `${i}`, `${i}`, `${i}`, `${i}`
-    ]);
+  async function FetchData() {
+    try {
+      const res = await fetch('https://raw.githubusercontent.com/TbilisiChallangeCup/database/main/Charts.json')
+      const json = JSON.parse(await res.text());
+
+      return json
+    }
+    catch (err) {
+      console.log(err)
+    }
   }
 
-  const years = ['2026','2025','2024','2023','2022','2021','2020','2019']
+  useEffect(() => {
+    (async () => {
+      try {
+        const data: structure = await FetchData();
+        const years = Object.keys(data).map(key => String(key))
+
+        setYears(years)
+        setData(data)
+      }
+
+      catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <main>
@@ -20,7 +62,7 @@ const Table = () => {
           <p>ტურნირის მიმდინარე მდგომარეობა ასაკობრივი კატეგორიების მიხედვით.</p>
         </section>
         <div className={`${style.statistics} default`}>
-          <Dropdown className={style.calendarDropdown} contents={years} indexing={false} />
+          <Dropdown className={style.calendarDropdown} contents={years} currentSelection={setSelected} />
           <table>
             <thead>
               <tr>
@@ -30,20 +72,26 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              {teamPlaceholders.map((data, i) => (
-                <tr key={i}>
-                  {data.map((cell, j) => (
-                    <td key={j}>{cell}</td>
-                  ))}
+              {data[selected]?.map((team) => (
+                <tr key={team.index}>
+                  <td>{team.index}</td>
+                  <td>{team.team}</td>
+                  <td>{team.played}</td>
+                  <td>{team.wins}</td>
+                  <td>{team.draws}</td>
+                  <td>{team.losses}</td>
+                  <td>{team.goalsScored}</td>
+                  <td>{team.goalsAgainst}</td>
+                  <td>{team.goalDifference}</td>
+                  <td>{team.points}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-
       </main>
     </>
   )
 }
 
-export default Table
+export default Charts
